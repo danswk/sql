@@ -1,0 +1,15 @@
+# ERROR 1
+Dimensions of table, imported data inconsistent
+# SOLUTION
+Remove category info, shift table to begin at A1
+
+# ERROR 2
+DATE datatype of 'Month' column inconsistent with YYYY-MM data format
+# SOLUTION
+Change datatype to VARCHAR(7)
+  Is there way to change date format?
+
+# ERROR 3
+Rows with entry '<1' fail to import
+# SOLUTION
+Use Find-Replace in Excel to substitute 0
