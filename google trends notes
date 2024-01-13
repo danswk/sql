@@ -7,7 +7,7 @@
 - Compare interest in UK and South Korea
 
 # ERROR 1 (1290)
-MySQL server running with --secure-file-priv option
+Cannot import local data because MySQL server running with --secure-file-priv option
 # SOLUTION
 Add 'local' between 'load data', 'infile'
 
