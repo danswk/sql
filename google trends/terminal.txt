@@ -2,6 +2,8 @@ mysql -u root -p
 [...]
 # mysql> load data infile '/Users/danswk/Downloads/uk.csv' into table uk;
 # ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
+# mysql> load data local infile '/Users/danswk/Downloads/uk.csv' into table uk;
+# ERROR 3950 (42000): Loading local data is disabled; this must be enabled on both the client and server side
 mysql> show global variables like 'local_infile';
 +---------------+-------+
 | Variable_name | Value |
@@ -19,7 +21,7 @@ mysql> show global variables like 'local_infile';
 +---------------+-------+
 | local_infile  | ON    |
 +---------------+-------+
-mysql> use csv
+mysql> use csv  # database name
 [...]
 mysql> load data local infile '/Users/danswk/Downloads/uk.csv' into table uk;
 Query OK, 242 rows affected, 726 warnings (0.11 sec)
