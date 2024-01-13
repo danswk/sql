@@ -16,6 +16,7 @@ mysql> show global variables like 'local_infile';
 | local_infile  | ON    |
 +---------------+-------+
 mysql> use csv
+[...]
 # mysql> LOAD DATA INFILE '/Users/danswk/Downloads/uk.csv' INTO TABLE uk;
 # ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
 mysql> LOAD DATA LOCAL INFILE '/Users/danswk/Downloads/uk.csv' INTO TABLE uk;
