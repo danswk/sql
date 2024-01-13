@@ -1,3 +1,7 @@
+# DATASET 1: trends.google.com/trends/explore?date=all&geo=GB&q=learn%20sql,learn%20python&hl=en [download CSV]
+# DATASET 2: trends.google.com/trends/explore?date=all&geo=KR&q=learn%20sql,learn%20python&hl=en
+# SOURCE: Google Trends
+~
 # ERROR 1
 Dimensions of table, imported data inconsistent
 # SOLUTION
@@ -7,9 +11,11 @@ Remove category info, shift table to begin at A1
 DATE datatype of 'Month' column inconsistent with YYYY-MM data format
 # SOLUTION
 Change datatype to VARCHAR(7)
-  Is there way to change date format?
+  - Is there way to change DATE format?
 
 # ERROR 3
-Rows with entry '<1' fail to import
+Rows with entry '<1' fail to import due to INT datatype
 # SOLUTION
 Use Find-Replace in Excel to substitute 0
+~
+1/2024
