@@ -1,0 +1,26 @@
+mysql -u root -p
+mysql> show global variables like 'local_infile';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| local_infile  | OFF   |
++---------------+-------+
+mysql> set global local_infile = true;
+mysql> exit
+mysql --local_infile=1 -u root -p
+[...]
+mysql> show global variables like 'local_infile';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| local_infile  | ON    |
++---------------+-------+
+mysql> use csv
+# mysql> LOAD DATA INFILE '/Users/danswk/Downloads/uk.csv' INTO TABLE uk;
+# ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
+mysql> LOAD DATA LOCAL INFILE '/Users/danswk/Downloads/uk.csv' INTO TABLE uk;
+Query OK, 242 rows affected, 726 warnings (0.11 sec)
+Records: 242  Deleted: 0  Skipped: 0  Warnings: 726
+mysql> LOAD DATA LOCAL INFILE '/Users/danswk/Downloads/sk.csv' INTO TABLE sk;
+Query OK, 242 rows affected, 726 warnings (0.03 sec)
+Records: 242  Deleted: 0  Skipped: 0  Warnings: 726
