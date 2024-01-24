@@ -1,0 +1,35 @@
+# DATASET 1: trends.google.com/trends/explore?date=all&geo=GB&q=learn%20sql,learn%20python&hl=en [download CSV]
+# DATASET 2: trends.google.com/trends/explore?date=all&geo=KR&q=learn%20sql,learn%20python&hl=en
+# SOURCE: Google Trends
+~
+# OBJECTIVE
+- Understand how interest in learning SQL evolves over time (2004-present) compared to learning Python
+- Compare interest in UK and South Korea
+
+# ERROR 1 (1290)
+Cannot import local data because MySQL server running with --secure-file-priv option
+# SOLUTION
+Add 'local' between 'load data', 'infile'
+
+# ERROR 2 (3950)
+Loading local data disabled
+# SOLUTION
+Set local_infile variable to 'true', run 'load data local infile [...]' again
+
+# ERROR 3
+Dimensions of table, imported data inconsistent
+# SOLUTION
+Remove category info, shift table to begin at A1 in Excel
+
+# ERROR 4
+DATE datatype of 'Month' column inconsistent with YYYY-MM data format
+# SOLUTION
+Change datatype to VARCHAR(7)
+  - Is there way to change DATE format?
+
+# ERROR 5
+Rows with entry '<1' fail to import due to INT datatype
+# SOLUTION
+Use Find-Replace in Excel to substitute 0
+~
+1/2024
