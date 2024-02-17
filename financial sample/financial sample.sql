@@ -56,10 +56,10 @@ UPDATE fs
 SET
 	`Manufacturing Price` = CAST(`Manufacturing Price` AS DECIMAL(9, 2)),
 	`Sale Price` = CAST(`Sale Price` AS DECIMAL(9, 2)),
-    `Gross Sales` = CAST(`Gross Sales` AS DECIMAL(9, 2)),
-    Sales = CAST(Sales AS DECIMAL(9, 2)),
-    COGS = CAST(COGS AS DECIMAL(9, 2)),
-    Profit = CAST(Profit AS DECIMAL(9, 2));
+	`Gross Sales` = CAST(`Gross Sales` AS DECIMAL(9, 2)),
+	Sales = CAST(Sales AS DECIMAL(9, 2)),
+	COGS = CAST(COGS AS DECIMAL(9, 2)),
+	Profit = CAST(Profit AS DECIMAL(9, 2));
 
 -- alt. could combine like
 -- UPDATE fs
