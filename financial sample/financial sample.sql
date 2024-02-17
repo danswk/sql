@@ -68,9 +68,9 @@ SET
 -- aggregate sales data
 SELECT
 	Country,
-    SUM(`Units Sold`) AS 'Total Units Sold',
-    SUM(Sales) AS 'Total Sales',
-    AVG(`Sale Price`) AS 'Average Sale Price'
+	SUM(`Units Sold`) AS 'Total Units Sold',
+	SUM(Sales) AS 'Total Sales',
+	AVG(`Sale Price`) AS 'Average Sale Price'
 FROM fs
 GROUP BY Country;  -- same avg sale price for every country - products sold evenly across sale prices + countries
 
@@ -78,33 +78,33 @@ GROUP BY Country;  -- same avg sale price for every country - products sold even
 SELECT
 	Country,
 	Product,
-    `Month Year`,
-    (Profit / Sales) * 100 AS 'Profit Margin'
+	`Month Year`,
+	(Profit / Sales) * 100 AS 'Profit Margin'
 FROM fs;  -- highest profit margin $26,200, lowest $0
 
 -- sales trends
 SELECT 
-    `Month Year`,
-    SUM(Sales) AS `Monthly Sales`
+	`Month Year`,
+	SUM(Sales) AS `Monthly Sales`
 FROM fs
 GROUP BY `Month Year`;  -- Oct 2014 best sales month with $12,344, Sep 2013 worst with $4464
 -- no apparent trend linking time of year with sales
 
 -- discount effectiveness
 SELECT 
-    `Discount Band`,
-    AVG(Sales) AS 'Average Sales w/ Discount',
-    AVG(Sales + Discounts) AS 'Average Sales w/out Discount',
-    AVG(Profit) AS 'Average Profit'
+	`Discount Band`,
+	AVG(Sales) AS 'Average Sales w/ Discount',
+	AVG(Sales + Discounts) AS 'Average Sales w/out Discount',
+	AVG(Profit) AS 'Average Profit'
 FROM fs
 GROUP BY `Discount Band`;  -- highest avg sales before + after discount & highest avg profit when discount is low
 -- more economically advantageous to offer low discount than no discount
 
 -- segmentation analysis
 SELECT 
-    Country,
-    Segment,
-    AVG(Sales) AS 'Average Sales'
+	Country,
+	Segment,
+	AVG(Sales) AS 'Average Sales'
 FROM fs
 GROUP BY Country, Segment;  -- highest avg sales by Small Business in USA, lowest by Channel Partners in Mexico
 
